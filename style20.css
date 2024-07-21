@@ -1,0 +1,277 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box  ;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+}
+#main{
+    height: 100%;
+    width: 100%;
+    background: linear-gradient( to right,#2f3f50,#3d3d3d);
+    color: #eee;
+    display: flex;
+    position: relative;
+    z-index: 4;
+    overflow: hidden;
+}
+#load{
+    height: 100%;
+    width: 100%;
+    background-color: #293746;
+    z-index: 99;
+    position: relative;
+    animation: loading 1s ease 1.5s 1  forwards;
+}
+@keyframes loading {
+    0%{
+        top: 0;
+
+    }
+    100%{
+        top: -100%;
+    }
+    
+}
+#load #logo{
+    height:200px;
+    width:250px;
+    position: absolute;
+    top:50%;
+    left:40%;
+    transform: translateX(-65%);
+    transform: translateY(-50%);
+    scale:1;
+    opacity:1;
+    /* animation: pop 1s linear .1s 1  forwards; */
+    /* background-color: #fa4860; */
+    
+}
+#logo img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    object-position: center;
+    scale: 1;
+    opacity: 1;
+    animation: pop 1s linear  1  forwards;
+}
+@keyframes pop {
+    0%{
+        scale: 0;
+        opacity:0;
+    }
+    50%{
+        scale: .5;
+        opacity: .5;
+    }
+    100%{
+        scale: 1.1;
+        opacity:1;
+    }   
+}
+
+#nav{
+    height: 80px;
+    width: 100%;
+    /* background-color: rgb(163, 52, 52); */
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 9;
+}
+#nav img{
+    height: 45px;
+}
+#n-1 {
+    display: flex;
+    cursor: pointer;
+}
+#n-1 h4{
+    margin: 15px;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all ease-in .1s;
+}
+#n-1 h4:hover{
+    margin-top: 10px;
+    text-decoration: underline;
+    
+}
+#n-2{
+    display: flex;
+}
+#n-2 h4{
+    margin: 15px;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 600;
+}
+#n-3{
+    display: flex;
+}
+#n-3 h4{
+    margin: 15px;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 600;
+}
+#nav i{
+    margin: 14px 5px;
+}
+#left{
+    height: 100%;
+    width: 40%;
+    background-color: #fa4860;
+    position: absolute;
+    right: 0%;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 62% 100%);
+    z-index: 1;
+
+}
+#main>img{
+    position: absolute;
+    right: 10.5%;
+    top: 3%;
+    transform: rotateZ(-30deg);
+    z-index: 9;
+    opacity: 0;
+    animation: drop 3s linear 5s 1  forwards;
+}
+@keyframes drop {
+    0%{
+        top: -100%;
+        opacity: 0;
+
+    }
+    25%{
+        top: 7.5%;
+        opacity: 1;
+    }
+    50%{
+        top: -2%;
+        opacity: 1;
+    }
+    75%{
+        top:5%;
+        opacity: 1;
+    }
+    100%{
+        top: 3%;
+        opacity: 1;
+    }
+    
+}
+#cont{
+    position: absolute;
+    z-index: 4;
+    top: 20%;
+    left: 12%;
+    /* background-color: #fa4860; */
+}
+#cont h1{
+    font-size: 50px;
+    text-transform: uppercase;
+    margin: 10px;
+    position: relative;
+    opacity: 0;
+    /* z-index: 4; */
+    animation: come1 .9s linear 2.1s 1  forwards;
+}
+
+#cont h2{
+    margin-left: 20px;
+    opacity: 0;
+    animation: come1 .9s linear 3.1s 1  forwards;
+
+}
+#cont #star{
+    display: flex;
+    margin-left: 10px;
+}
+#star i{
+    margin: 2px;
+    font-size: 15px;
+    color: gold;
+    opacity: 0;
+    animation: come1 .9s linear 4.1s 1  forwards;
+
+}
+#cont p{
+    padding: 10px;
+    line-height: 22px;
+    font-size: 17px;
+    opacity: 0;
+    animation: come1 .9s linear 3.1s 1  forwards;
+
+}
+#cont button{
+    border-radius: 25px;
+    padding: 7px 35px;
+    font-size: 19px;
+    border: none;
+    background-color: #fa4860;
+    color: #eee;
+    margin-top: 10px;
+    scale: 1;
+    transition: all linear .1s;
+    opacity: 0;
+    animation: come2 .9s linear 3.5s 1  forwards;
+
+    
+}
+#cont button:hover{
+    scale: 1.1;
+    background-color: #fc2642;
+}
+#cont #social{
+    font-size: 20px;
+    margin:65px;
+    opacity: 0;
+    /* background-color: whitesmoke; */
+    animation: come2 .9s linear 3.5s 1  forwards;
+
+
+}
+@keyframes come1 {
+    0%{
+        left: -200%;
+        opacity: 0;
+    }
+    100%{
+        left: 0%;
+        opacity: 1;
+    }
+    
+}
+@keyframes come2 {
+    0%{
+        margin-left: -200%;
+        opacity: 0;
+    }
+    100%{
+        margin-left: 65px;
+        opacity: 1;
+    }
+    
+}
+
+#social i{
+    margin: 10x;
+    scale: 1;
+
+}
+#main #bigboss{
+    font-size: 400px;
+    white-space: nowrap;
+    position: absolute;
+    /* margin-left: 50px; */
+    z-index: 1;
+    color: #0505052f;
+    
+}
